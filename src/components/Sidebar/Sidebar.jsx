@@ -1,4 +1,15 @@
 import { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { 
+  faHome, 
+  faUsers, 
+  faCalendarAlt, 
+  faFileAlt, 
+  faImages, 
+  faChartBar, 
+  faGraduationCap,
+  faKeyboard
+} from '@fortawesome/free-solid-svg-icons'
 
 function Sidebar({ isOpen, onClose }) {
   // Since we don't have react-router-dom, we'll use a simpler approach
@@ -19,16 +30,15 @@ function Sidebar({ isOpen, onClose }) {
         <div className="brand-logo">
           <span className="logo-symbol">#</span>
           <div className="brand-info">
-            <h2>acai</h2>
-            <p>admin@acai.com</p>
+            <h2>Tanwir</h2>
+            <p>admin@tanwir.org</p>
           </div>
         </div>
-        <button className="close-sidebar" onClick={onClose}>×</button>
       </div>
       
       <div className="sidebar-section">
         <h3 className="section-title">Quick actions</h3>
-        <div className="shortcut-key">⌘ K</div>
+        <div className="shortcut-key"><FontAwesomeIcon icon={faKeyboard} className="shortcut-icon" /> K</div>
       </div>
       
       <nav className="sidebar-nav">
@@ -36,7 +46,7 @@ function Sidebar({ isOpen, onClose }) {
           className="nav-item" 
           onClick={() => handleNavigation('dashboard')}
         >
-          <span className="nav-icon">🏠</span>
+          <span className="nav-icon"><FontAwesomeIcon icon={faHome} /></span>
           <span>Dashboard</span>
         </button>
         
@@ -44,7 +54,7 @@ function Sidebar({ isOpen, onClose }) {
           className="nav-item" 
           onClick={() => handleNavigation('member-directory')}
         >
-          <span className="nav-icon">👥</span>
+          <span className="nav-icon"><FontAwesomeIcon icon={faUsers} /></span>
           <span>Member Directory</span>
         </button>
         
@@ -52,7 +62,7 @@ function Sidebar({ isOpen, onClose }) {
           className="nav-item" 
           onClick={() => handleNavigation('event-calendar')}
         >
-          <span className="nav-icon">📅</span>
+          <span className="nav-icon"><FontAwesomeIcon icon={faCalendarAlt} /></span>
           <span>Event Calendar</span>
         </button>
         
@@ -62,7 +72,7 @@ function Sidebar({ isOpen, onClose }) {
           className="nav-item" 
           onClick={() => handleNavigation('document-library')}
         >
-          <span className="nav-icon">📄</span>
+          <span className="nav-icon"><FontAwesomeIcon icon={faFileAlt} /></span>
           <span>Document Library</span>
         </button>
         
@@ -70,7 +80,7 @@ function Sidebar({ isOpen, onClose }) {
           className="nav-item" 
           onClick={() => handleNavigation('media-gallery')}
         >
-          <span className="nav-icon">🖼️</span>
+          <span className="nav-icon"><FontAwesomeIcon icon={faImages} /></span>
           <span>Media Gallery</span>
         </button>
         
@@ -78,7 +88,7 @@ function Sidebar({ isOpen, onClose }) {
           className="nav-item" 
           onClick={() => handleNavigation('reports-analytics')}
         >
-          <span className="nav-icon">📊</span>
+          <span className="nav-icon"><FontAwesomeIcon icon={faChartBar} /></span>
           <span>Reports and Analytics</span>
           <span className="nav-badge">New</span>
         </button>
@@ -89,7 +99,7 @@ function Sidebar({ isOpen, onClose }) {
           className="nav-item" 
           onClick={() => handleNavigation('student-portal')}
         >
-          <span className="nav-icon">🎓</span>
+          <span className="nav-icon"><FontAwesomeIcon icon={faGraduationCap} /></span>
           <span>Student Portal</span>
         </button>
       </nav>

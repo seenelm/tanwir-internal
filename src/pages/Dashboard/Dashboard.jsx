@@ -1,5 +1,12 @@
 import StatCard from '../../components/Cards/StatCard'
 import DocCard from '../../components/Documents/DocCard'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { 
+  faBook, 
+  faFileSignature, 
+  faCalendarDay, 
+  faBookOpen 
+} from '@fortawesome/free-solid-svg-icons'
 
 function Dashboard() {
   const handleViewDocument = (docId) => {
@@ -45,32 +52,26 @@ function Dashboard() {
         <h3>Quick Documents</h3>
         <div className="docs-grid">
           <DocCard 
-            icon="📄" 
-            title="Student Handbook" 
+            icon={<FontAwesomeIcon icon={faBook} />} 
+            title="Volunteer Handbook" 
             description="Guidelines and policies for students" 
             onView={() => handleViewDocument('handbook')} 
           />
           
           <DocCard 
-            icon="📝" 
-            title="Registration Form" 
-            description="New student registration" 
+            icon={<FontAwesomeIcon icon={faFileSignature} />} 
+            title="Volunteer Application" 
+            description="New volunteer application" 
             onView={() => handleViewDocument('registration')} 
           />
           
           <DocCard 
-            icon="📊" 
-            title="Semester Calendar" 
+            icon={<FontAwesomeIcon icon={faCalendarDay} />} 
+            title="Internal Calendar" 
             description="Important dates and events" 
             onView={() => handleViewDocument('calendar')} 
           />
           
-          <DocCard 
-            icon="📚" 
-            title="Course Catalog" 
-            description="Available courses and descriptions" 
-            onView={() => handleViewDocument('catalog')} 
-          />
         </div>
       </div>
     </div>
