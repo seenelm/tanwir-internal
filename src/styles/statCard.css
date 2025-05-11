@@ -1,0 +1,58 @@
+.stat-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--card-border);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+  border-color: var(--badge-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stat-header {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--card-header-color);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--card-value-color);
+  margin: 0 0 1.25rem;
+  line-height: 1.2;
+}
+
+.stat-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  font-size: 0.85rem;
+  color: var(--card-footer-color);
+}
+
+.stat-percentage {
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+}
+
+.stat-percentage.positive {
+  color: var(--positive-color);
+}
+
+.stat-percentage.negative {
+  color: var(--negative-color);
+}

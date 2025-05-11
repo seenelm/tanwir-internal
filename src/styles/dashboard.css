@@ -1,0 +1,33 @@
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.quick-docs-section {
+  margin-top: 2.5rem;
+}
+
+.quick-docs-section h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--section-title-color);
+  margin-bottom: 1.25rem;
+}
+
+.docs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .docs-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import './styles/index.js'
 
 // Import layout components
 import AppLayout from './components/Layout/AppLayout'

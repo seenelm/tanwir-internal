@@ -1,0 +1,60 @@
+.doc-card {
+  display: flex;
+  align-items: center;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--card-border);
+  transition: all 0.2s ease;
+}
+
+.doc-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  border-color: var(--badge-bg);
+}
+
+.doc-card-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: var(--badge-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.doc-card-content {
+  flex: 1;
+}
+
+.doc-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--card-value-color);
+  margin-bottom: 0.25rem;
+}
+
+.doc-card-description {
+  font-size: 0.875rem;
+  color: var(--card-footer-color);
+  margin: 0;
+}
+
+.doc-card-action {
+  background-color: var(--badge-bg);
+  color: var(--badge-text);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.doc-card-action:hover {
+  opacity: 0.9;
+}
