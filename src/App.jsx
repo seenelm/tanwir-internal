@@ -12,7 +12,8 @@ import EventCalendar from './pages/EventCalendar/EventCalendar'
 import DocumentLibrary from './pages/DocumentLibrary/DocumentLibrary'
 import MediaGallery from './pages/MediaGallery/MediaGallery'
 import ReportsAnalytics from './pages/ReportsAnalytics/ReportsAnalytics'
-import StudentPortal from './pages/StudentPortal/StudentPortal'
+// Student Portal is now an external link, no need to import the component
+// import StudentPortal from './pages/StudentPortal/StudentPortal'
 
 function App() {
   const [activeTab, setActiveTab] = useState('dashboard')
@@ -31,8 +32,9 @@ function App() {
         return <MediaGallery />
       case 'reports-analytics':
         return <ReportsAnalytics />
-      case 'student-portal':
-        return <StudentPortal />
+      // Student Portal is now an external link, no need for this case
+      // case 'student-portal':
+      //   return <StudentPortal />
       default:
         return <div>Select a tab</div>
     }

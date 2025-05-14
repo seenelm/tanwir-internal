@@ -8,7 +8,8 @@ import {
   faImages, 
   faChartBar, 
   faGraduationCap,
-  faKeyboard
+  faKeyboard,
+  faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons'
 
 function Sidebar({ isOpen, onClose }) {
@@ -23,6 +24,14 @@ function Sidebar({ isOpen, onClose }) {
       onClose()
     }
   }
+
+  const openExternalLink = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+    
+    if (window.innerWidth < 768) {
+      onClose();
+    }
+  };
 
   return (
     <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
@@ -96,11 +105,12 @@ function Sidebar({ isOpen, onClose }) {
         <div className="nav-divider"></div>
         
         <button 
-          className="nav-item" 
-          onClick={() => handleNavigation('student-portal')}
+          className="nav-item external-link" 
+          onClick={() => openExternalLink('https://tanwir-students.netlify.app')}
         >
           <span className="nav-icon"><FontAwesomeIcon icon={faGraduationCap} /></span>
           <span>Student Portal</span>
+          <span className="external-icon"><FontAwesomeIcon icon={faExternalLinkAlt} size="xs" /></span>
         </button>
       </nav>
     </aside>
