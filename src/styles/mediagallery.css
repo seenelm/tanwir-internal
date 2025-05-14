@@ -14,7 +14,7 @@
 }
 
 .brand-guidelines-section {
-  background-color: #fff;
+  background-color: var(--card-bg);
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   padding: 25px;
@@ -24,7 +24,7 @@
 .brand-guidelines-section h3 {
   font-size: 22px;
   margin-bottom: 20px;
-  color: #0056b3;
+  color: var(--text-color);
 }
 
 .guideline-section {
@@ -34,12 +34,12 @@
 .guideline-section h4 {
   font-size: 18px;
   margin-bottom: 10px;
-  color: #333;
+  color: var(--text-color);
 }
 
 .guideline-section p {
   margin-bottom: 20px;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 /* Color Palette Styles */
@@ -53,6 +53,7 @@
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--divider-color);
 }
 
 .color-swatch {
@@ -80,7 +81,7 @@
 
 .color-info {
   padding: 15px;
-  background-color: #f9f9f9;
+  background-color: var(--card-bg);
 }
 
 .color-info h5 {
@@ -98,8 +99,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: var(--card-bg);
+  border: 1px solid var(--divider-color);
   padding: 6px 10px;
   border-radius: 4px;
   font-size: 13px;
@@ -108,12 +109,12 @@
 }
 
 .copy-button:hover {
-  background-color: #f0f0f0;
+  background-color: var(--card-bg-hover);
 }
 
 .copy-icon {
   font-size: 12px;
-  color: #666;
+  color: var(--text-secondary);
   margin-left: 5px;
 }
 
@@ -130,6 +131,8 @@
   overflow: hidden;
   background-color: var(--card-bg);
   transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo-item:hover {
@@ -149,7 +152,7 @@
 
 /* White logo needs a dark background to be visible */
 .logo-item:nth-child(2) .logo-preview {
-  background-color: #333;
+  background-color: var(--background-color);
 }
 
 .logo-image {
@@ -161,6 +164,9 @@
 .logo-info {
   padding: 15px;
   border-top: 1px solid var(--divider-color);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .logo-info h5 {
@@ -186,9 +192,10 @@
 .download-button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   background-color: var(--primary-color);
-  color: white;
+  color: var(--text-color);
   border: none;
   padding: 8px 15px;
   border-radius: 4px;
@@ -196,6 +203,8 @@
   transition: background-color 0.2s;
   text-decoration: none;
   font-size: 14px;
+  width: 100%;
+  margin-top: auto;
 }
 
 .download-button:hover {
@@ -211,8 +220,9 @@
 
 .font-item {
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: var(--card-bg);
   border-radius: 6px;
+  border: 1px solid var(--divider-color);
 }
 
 .font-sample {
