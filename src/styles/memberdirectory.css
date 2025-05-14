@@ -7,23 +7,17 @@
   /* card now fills its parent */
   .card {
     width: 100%;
-    background: #fff;
+    background: var(--card-bg);
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     overflow: hidden;
-    max-width: 100%; /* Ensure it doesn't exceed parent width */
   }
   
   /* scroll container fills card and allows swipe on iOS */
   .responsive-table {
     width: 100%;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch; /* enables momentum scrolling on iOS */
-    scrollbar-width: thin; /* for Firefox */
-    position: relative; /* creates a new stacking context */
-    display: block; /* Ensures block-level behavior */
-    -ms-overflow-style: -ms-autohiding-scrollbar; /* IE/Edge support */
-    touch-action: pan-x; /* Explicitly enable horizontal panning */
+    -webkit-overflow-scrolling: touch;
   }
   
   /* optional: style the scrollbar */
@@ -35,84 +29,49 @@
     border-radius: 3px;
   }
   
-  /* For mobile devices specifically */
-  @media (max-width: 767px) {
-    .responsive-table {
-      overflow-x: scroll; /* Force scrolling on mobile */
-      -webkit-overflow-scrolling: touch; /* Reinforce for iOS */
-      scroll-behavior: smooth; /* Smooth scrolling */
-    }
-    
-    /* Make scrollbar more visible on mobile */
-    .responsive-table::-webkit-scrollbar {
-      height: 8px;
-    }
-    
-    .responsive-table::-webkit-scrollbar-thumb {
-      background-color: rgba(0,0,0,0.3);
-    }
-  }
-  
-  /* table fills container when wide enough, but allows horizontal scrolling when narrow */
+  /* table fills container when wide enough, but overflows when narrow */
   .member-table {
     width: 100%;
-    min-width: 600px; /* ensures table maintains structure on small screens */
+    min-width: 600px;     /* bump this up if you add more columns */
     border-collapse: collapse;
-    table-layout: fixed; /* helps with consistent column widths */
-  }
-  
-  /* Define column widths for better control */
-  .member-table th:nth-child(1), 
-  .member-table td:nth-child(1) {
-    width: 25%;
-  }
-  .member-table th:nth-child(2), 
-  .member-table td:nth-child(2) {
-    width: 35%;
-  }
-  .member-table th:nth-child(3), 
-  .member-table td:nth-child(3) {
-    width: 20%;
-  }
-  .member-table th:nth-child(4), 
-  .member-table td:nth-child(4) {
-    width: 20%;
+    table-layout: auto;
   }
   
   /* sticky header so your column titles stay visible */
   .member-table thead th {
     position: sticky;
     top: 0;
-    background: #f7f7f7;
+    background: var(--card-bg);
     padding: 12px 16px;
     font-size: 0.95rem;
     text-align: left;
-    border-bottom: 2px solid #e0e0e0;
+    border-bottom: 2px solid var(--divider-color);
     white-space: nowrap;
   }
   
   /* cell styles */
   .member-table td {
     padding: 12px 16px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--divider-color);
     white-space: nowrap;
     font-size: 0.9rem;
-    color: #333;
+    color: var(--text-color);
   }
   
   /* zebra striping & hover */
   .member-table tbody tr:nth-child(even) {
-    background: #fafafa;
+    background: var(--card-bg);
   }
   .member-table tbody tr:hover {
-    background: #f0f8ff;
+    background: var(--hover-bg);
   }
   
   /* email link styling */
   .member-table a {
-    color: #1a0dab;
+    color: var(--text-color);
     text-decoration: none;
   }
   .member-table a:hover {
     text-decoration: underline;
   }
+  

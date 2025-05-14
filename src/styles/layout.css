@@ -105,7 +105,14 @@
     overflow-x: hidden;
   }
   
+  /* Only display overlay when sidebar is active */
   .overlay {
+    display: none;
+    pointer-events: none; /* Allow touches to pass through when visible */
+  }
+  
+  .overlay.visible {
     display: block;
+    pointer-events: auto; /* Only capture touches when visible */
   }
 }
