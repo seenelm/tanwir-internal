@@ -125,55 +125,81 @@
 }
 
 .logo-item {
-  border: 1px solid #eee;
+  border: 1px solid var(--divider-color);
   border-radius: 6px;
   overflow: hidden;
+  background-color: var(--card-bg);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.logo-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .logo-preview {
   padding: 20px;
-  background-color: #f9f9f9;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 150px;
+  height: 180px;
+  background-color: var(--background-color);
+  position: relative;
 }
 
-.logo-placeholder {
-  width: 120px;
-  height: 120px;
-  background-color: #e0e0e0;
-  border-radius: 4px;
+/* White logo needs a dark background to be visible */
+.logo-item:nth-child(2) .logo-preview {
+  background-color: #333;
+}
+
+.logo-image {
+  max-width: 100%;
+  max-height: 140px;
+  object-fit: contain;
 }
 
 .logo-info {
   padding: 15px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--divider-color);
 }
 
 .logo-info h5 {
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  color: var(--text-color);
+  font-size: 16px;
 }
 
-.logo-info p {
+.logo-description {
   font-size: 14px;
-  color: #777;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.logo-format {
+  font-size: 12px;
+  color: var(--text-secondary);
   margin-bottom: 15px;
+  font-weight: 500;
 }
 
 .download-button {
-  background-color: #0056b3;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   padding: 8px 15px;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s;
-  font-weight: 500;
+  text-decoration: none;
+  font-size: 14px;
 }
 
 .download-button:hover {
-  background-color: #004494;
+  background-color: var(--primary-color-hover);
 }
 
 /* Typography Styles */

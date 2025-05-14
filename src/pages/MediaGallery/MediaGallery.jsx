@@ -1,22 +1,60 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import '../../styles/mediagallery.css';
+
+// Import logo images
+import tanwirLogo from '../../assets/tanwir-logo.png';
+import tanwirLogoWhite from '../../assets/tanwir-logo-white.png';
+import tanwirLogoHorizontal from '../../assets/tanwir-logo-horizontal.png';
+import tanwirLogoGrayscale from '../../assets/tanwir-logo-grayscale.png';
+import tanwirLogoHorizontalGrayscale from '../../assets/tanwir-logo-horizontal-grayscale.png';
 
 function MediaGallery() {
   const [copiedColor, setCopiedColor] = useState(null);
   
   const brandColors = [
-    { name: 'Primary Blue', hex: '#0056b3', rgb: 'rgb(0, 86, 179)' },
-    { name: 'Secondary Teal', hex: '#00a0b0', rgb: 'rgb(0, 160, 176)' },
-    { name: 'Accent Orange', hex: '#ff7f50', rgb: 'rgb(255, 127, 80)' },
-    { name: 'Dark Gray', hex: '#333333', rgb: 'rgb(51, 51, 51)' },
-    { name: 'Light Gray', hex: '#f5f5f5', rgb: 'rgb(245, 245, 245)' },
+    { name: 'Green', hex: '#009078', rgb: 'rgb(0, 144, 120)' },
+    { name: 'Gold', hex: '#CFAD56', rgb: 'rgb(207, 173, 86)' },
+    { name: 'Light Gray', hex: '#D3D3D3', rgb: 'rgb(211, 211, 211)' },
   ];
 
   const logos = [
-    { name: 'Primary Logo', file: 'primary-logo.png', type: 'PNG' },
-    { name: 'Horizontal Logo', file: 'horizontal-logo.png', type: 'PNG' },
-    { name: 'Icon Only', file: 'icon-logo.png', type: 'PNG' },
-    { name: 'Logo Vector', file: 'vector-logo.svg', type: 'SVG' },
+    { 
+      name: 'Primary Logo', 
+      file: tanwirLogo, 
+      type: 'PNG',
+      filename: 'tanwir-logo.png',
+      description: 'Standard colored logo for light backgrounds'
+    },
+    { 
+      name: 'White Logo', 
+      file: tanwirLogoWhite, 
+      type: 'PNG',
+      filename: 'tanwir-logo-white.png',
+      description: 'White logo for dark backgrounds'
+    },
+    { 
+      name: 'Horizontal Logo', 
+      file: tanwirLogoHorizontal, 
+      type: 'PNG',
+      filename: 'tanwir-logo-horizontal.png',
+      description: 'Horizontal version for headers and navigation'
+    },
+    { 
+      name: 'Grayscale Logo', 
+      file: tanwirLogoGrayscale, 
+      type: 'PNG',
+      filename: 'tanwir-logo-grayscale.png',
+      description: 'Grayscale version for monochrome applications'
+    },
+    { 
+      name: 'Horizontal Grayscale', 
+      file: tanwirLogoHorizontalGrayscale, 
+      type: 'PNG',
+      filename: 'tanwir-logo-horizontal-grayscale.png',
+      description: 'Horizontal grayscale version'
+    }
   ];
 
   const typography = [
@@ -90,15 +128,23 @@ function MediaGallery() {
             {logos.map((logo) => (
               <div key={logo.name} className="logo-item">
                 <div className="logo-preview">
-                  {/* Placeholder for actual logo images */}
-                  <div className="logo-placeholder"></div>
+                  <img 
+                    src={logo.file} 
+                    alt={logo.name} 
+                    className="logo-image"
+                  />
                 </div>
                 <div className="logo-info">
                   <h5>{logo.name}</h5>
-                  <p>{logo.type} Format</p>
-                  <button className="download-button">
-                    Download
-                  </button>
+                  <p className="logo-description">{logo.description}</p>
+                  <p className="logo-format">{logo.type} Format</p>
+                  <a 
+                    href={logo.file} 
+                    download={logo.filename}
+                    className="download-button"
+                  >
+                    <FontAwesomeIcon icon={faDownload} /> Download
+                  </a>
                 </div>
               </div>
             ))}
