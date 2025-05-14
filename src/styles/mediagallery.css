@@ -1,0 +1,209 @@
+/* Media Gallery Styles */
+.media-gallery-container {
+
+  margin: 0 auto;
+}
+
+.media-gallery-header {
+  margin-bottom: 30px;
+}
+
+.media-gallery-header h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.brand-guidelines-section {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.brand-guidelines-section h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #0056b3;
+}
+
+.guideline-section {
+  margin-bottom: 40px;
+}
+
+.guideline-section h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.guideline-section p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+/* Color Palette Styles */
+.color-palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.color-item {
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.color-swatch {
+  height: 120px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.color-swatch:hover {
+  transform: scale(1.02);
+}
+
+.copied-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.color-info {
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.color-info h5 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.color-values {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.copy-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.copy-button:hover {
+  background-color: #f0f0f0;
+}
+
+.copy-icon {
+  font-size: 12px;
+  color: #666;
+  margin-left: 5px;
+}
+
+/* Logo Downloads Styles */
+.logo-downloads {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.logo-item {
+  border: 1px solid #eee;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.logo-preview {
+  padding: 20px;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
+.logo-placeholder {
+  width: 120px;
+  height: 120px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+}
+
+.logo-info {
+  padding: 15px;
+  border-top: 1px solid #eee;
+}
+
+.logo-info h5 {
+  margin-bottom: 5px;
+}
+
+.logo-info p {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.download-button {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-weight: 500;
+}
+
+.download-button:hover {
+  background-color: #004494;
+}
+
+/* Typography Styles */
+.typography-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.font-item {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+}
+
+.font-sample {
+  margin-top: 15px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .color-palette,
+  .logo-downloads,
+  .typography-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .guideline-section {
+    margin-bottom: 30px;
+  }
+}
